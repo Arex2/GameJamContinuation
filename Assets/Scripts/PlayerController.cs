@@ -10,14 +10,18 @@ public class PlayerController : MonoBehaviour
     private float horizontalValue;
     private bool canMove;
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
     [SerializeField] private Transform footL, footR;
     [SerializeField] private LayerMask whatIsGround;
     private float rayDistance = 0.25f;
     // Start is called before the first frame update
     void Start()
     {
+        EventController.onDeath += Respawn;
+
         canMove = true;
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,11 +29,22 @@ public class PlayerController : MonoBehaviour
     {
         horizontalValue = Input.GetAxis("Horizontal");
 
+        if (horizontalValue < 0f)
+        {
+            FlipSprite(true);
+        }
+        if (horizontalValue > 0f)
+        {
+            FlipSprite(false);
+        }
+
         if (Input.GetButtonDown("Jump") && CheckIfGrounded())
         {
             rb.velocity = Vector2.zero; // so add force isn't additive
             Jump();
         }
+
+
     }
 
     private void FixedUpdate()//"går på ett jämnt intervall 60 gånger i sekunden"
@@ -39,6 +54,10 @@ public class PlayerController : MonoBehaviour
             return;
         }
         rb.velocity = new Vector2(horizontalValue * moveSpeed * Time.deltaTime, rb.velocity.y);
+    }
+    private void FlipSprite(bool direction)
+    {
+        spriteRenderer.flipX = direction;
     }
 
     private void Jump()
@@ -59,5 +78,10 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private void Respawn()
+    {
+        //do respawn things
     }
 }

@@ -17,6 +17,10 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         loseHealth = true;
+        EventController.onDeath += Test;
+    }
+    private void Test()
+    {
     }
 
     // Update is called once per frame
@@ -75,4 +79,6 @@ public class PlayerHealth : MonoBehaviour
         }
         */
     }
+
+
 }

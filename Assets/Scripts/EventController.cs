@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventController : MonoBehaviour
+public class EventController
 {
     //MAKE THIS A SINGLETON?!
     public delegate void OnDeath();
@@ -15,6 +15,7 @@ public class EventController : MonoBehaviour
     {
         if (onDeath != null) //Only raise event if things are subbed to the event
         {
+            Debug.Log("Player death!");
             onDeath(); //invoke event
         }
     }
@@ -23,6 +24,7 @@ public class EventController : MonoBehaviour
     {
         if (onRespawn != null) //Only raise event if things are subbed to the event
         {
+            Debug.Log("Player respawn!");
             onRespawn(); //invoke event
         }
     }
