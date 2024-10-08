@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset = new Vector3(0, 0, -10f);
-    private float smoothing = 1.0f;
+    private float smoothing = 2.5f;
     static public bool cameraFree;
 
     private void Start()

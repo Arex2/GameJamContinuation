@@ -72,21 +72,21 @@ public class PlayerController : MonoBehaviour
             ShootBomb();
         }
 
-        if(GetComponent<PlayerHealth>().CurrentHealth >= 800)
+        if(GetComponent<PlayerHealth>().CurrentHealth > 800)
         {
-            moveSpeed = 700f;
+            moveSpeed = 350f;
             lowHealthImage.SetActive(false);
         }
 
-        if (GetComponent<PlayerHealth>().CurrentHealth >= 101 && GetComponent<PlayerHealth>().CurrentHealth <= 799)
+        if (GetComponent<PlayerHealth>().CurrentHealth >= 200 && GetComponent<PlayerHealth>().CurrentHealth <= 799)
         {
             moveSpeed = 500f;
             lowHealthImage.SetActive(false);
         }
 
-        if (GetComponent<PlayerHealth>().CurrentHealth <= 100)
+        if (GetComponent<PlayerHealth>().CurrentHealth < 200)
         {
-            moveSpeed = 400f;
+            moveSpeed = 700f;
             lowHealthImage.SetActive(true);
         }
 
