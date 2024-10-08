@@ -9,7 +9,7 @@ using static UnityEngine.GraphicsBuffer;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject lowHealthImage;
-    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float moveSpeed = 800f;
     [SerializeField] private float jumpForce = 150f;
     [SerializeField] private Transform footL, footR;
     [SerializeField] private LayerMask whatIsGround;
@@ -74,18 +74,19 @@ public class PlayerController : MonoBehaviour
 
         if(GetComponent<PlayerHealth>().CurrentHealth >= 800)
         {
-            moveSpeed = 1f;
+            moveSpeed = 700f;
             lowHealthImage.SetActive(false);
         }
 
-        if (GetComponent<PlayerHealth>().CurrentHealth >= 101)
+        if (GetComponent<PlayerHealth>().CurrentHealth >= 101 && GetComponent<PlayerHealth>().CurrentHealth <= 799)
         {
+            moveSpeed = 500f;
             lowHealthImage.SetActive(false);
         }
 
         if (GetComponent<PlayerHealth>().CurrentHealth <= 100)
         {
-            moveSpeed = 0.7f;
+            moveSpeed = 400f;
             lowHealthImage.SetActive(true);
         }
 
