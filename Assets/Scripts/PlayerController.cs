@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +17,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform footL, footR;
     [SerializeField] private LayerMask whatIsGround;
     private float rayDistance = 0.25f;
+
+    private bool canShoot;
+    private float timer;
+    private float cooldown1 = 0.25f;
+    private int projectileForce = 1000;
+
+    [SerializeField]
+    public Sprite[] projectileSprites;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +33,8 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        timer = cooldown1;
     }
 
     // Update is called once per frame
@@ -44,7 +57,28 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
+        if(Input.GetButtonDown("Fire1") && canShoot)
+        {
+            Debug.Log("Shoot 1");
+            ShootProjectile();
+            canShoot = false;
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Debug.Log("Shoot 2");
+            ShootBomb();
+        }
 
+        //cooldown timer
+        if(canShoot == false)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0.0f)
+            {
+                canShoot = true;
+                timer = cooldown1;
+            }
+        }
     }
 
     private void FixedUpdate()//"går på ett jämnt intervall 60 gånger i sekunden"
@@ -55,6 +89,9 @@ public class PlayerController : MonoBehaviour
         }
         rb.velocity = new Vector2(horizontalValue * moveSpeed * Time.deltaTime, rb.velocity.y);
     }
+
+
+
     private void FlipSprite(bool direction)
     {
         spriteRenderer.flipX = direction;
@@ -83,5 +120,31 @@ public class PlayerController : MonoBehaviour
     private void Respawn()
     {
         //do respawn things
+    }
+
+    private void ShootProjectile()
+    {
+        //Instantiate(Resources.Load<TMP_Text>("PopupText"), Input.mousePosition - (offset/2), transform.rotation) as TMP_Text; //Camera.main.ScreenToWorldPoint(Input.mousePosition)
+        var mousepos = GetMousePosition();
+        var lookAngle = Mathf.Atan2(mousepos.y, mousepos.x) * Mathf.Rad2Deg;
+        GameObject projectile = Instantiate(Resources.Load<GameObject>("Projectile"), transform.position, Quaternion.Euler(0, 0, lookAngle));
+        projectile.GetComponent<SpriteRenderer>().sprite = projectileSprites[Random.Range(0, projectileSprites.Length)];
+        projectile.GetComponent<Rigidbody2D>().AddForce(GetMousePosition() * projectileForce);
+
+
+    }
+    private void ShootBomb()
+    {
+
+    }
+
+    private Vector3 GetMousePosition()
+    {
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 aimPoint = (Vector3)(Input.mousePosition - screenPoint);
+        aimPoint.Normalize();
+
+        return aimPoint;
+
     }
 }
