@@ -21,11 +21,11 @@ public class CookieClicking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H))
+        if(Input.GetButtonDown("Shift"))
         {
             ShowCookieClicker();
         }
-        if(Input.GetKeyUp(KeyCode.H))
+        if(Input.GetButtonUp("Shift"))
         {
             HideCookieClicker();
         }

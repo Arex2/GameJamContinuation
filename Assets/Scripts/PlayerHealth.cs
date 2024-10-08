@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public bool loseHealth;
-    private int maxHealth = 10;
-    private int currentHealth = 10;
-    private float startTime = 1.5f; //time between 1hp draining
+    private int maxHealth = 1000;
+    private int currentHealth = 1000;
+    private float startTime = 0.05f; //time between 1hp draining
     private float timer;
 
     [SerializeField] private Slider healthSlider;
@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() //VARA I FIXED UPDATE?
     {
         if (loseHealth)
         {
@@ -38,7 +38,6 @@ public class PlayerHealth : MonoBehaviour
             EventController.RaiseOnDeath();
         }
     }
-
 
     private void Timer()
     {
@@ -54,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (currentHealth >= maxHealth)
             return;
-        currentHealth++;
+        currentHealth+= 10;
         UpdateHealthBar();
     }
 
