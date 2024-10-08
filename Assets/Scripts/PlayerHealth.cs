@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private Slider healthSlider;
     public bool loseHealth;
     private int maxHealth = 1000;
     private int currentHealth = 1000;
     private float startTime = 0.05f; //time between 1hp draining
     private float timer;
-
-    [SerializeField] private Slider healthSlider;
 
     // Start is called before the first frame update
     void Start()
