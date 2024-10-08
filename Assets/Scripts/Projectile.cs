@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField]
+    ParticleSystem _particleSystem;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //find enemy
@@ -16,6 +18,7 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
+        Instantiate(_particleSystem, transform.position, gameObject.transform.rotation);
         Destroy(this.gameObject);
     }
 }
