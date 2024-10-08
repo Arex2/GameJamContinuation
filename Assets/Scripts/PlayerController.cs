@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
-    private float rayDistance = 0.25f;
-
     private bool canShoot;
     private float timer;
     private float cooldown1 = 0.25f;
