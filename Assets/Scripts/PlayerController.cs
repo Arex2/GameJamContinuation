@@ -8,6 +8,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject lowHealthImage;
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float jumpForce = 150f;
     [SerializeField] private Transform footL, footR;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         timer = cooldown1;
+        lowHealthImage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -70,8 +72,25 @@ public class PlayerController : MonoBehaviour
             ShootBomb();
         }
 
+        if(GetComponent<PlayerHealth>().CurrentHealth >= 800)
+        {
+            moveSpeed = 1f;
+            lowHealthImage.SetActive(false);
+        }
+
+        if (GetComponent<PlayerHealth>().CurrentHealth >= 101)
+        {
+            lowHealthImage.SetActive(false);
+        }
+
+        if (GetComponent<PlayerHealth>().CurrentHealth <= 100)
+        {
+            moveSpeed = 0.7f;
+            lowHealthImage.SetActive(true);
+        }
+
         //cooldown timer
-        if(canShoot == false)
+        if (canShoot == false)
         {
             timer -= Time.deltaTime;
             if (timer <= 0.0f)
