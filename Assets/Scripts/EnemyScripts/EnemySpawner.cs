@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject enemy;
+
+    private void SpawnEnemy()
     {
-        
+        Instantiate(enemy, transform.position, enemy.transform.localRotation);
+        enemy.GetComponent<EnemyController>().canMove = false;
+        enemy.GetComponent<EnemyController>().GetComponent<Rigidbody2D>().velocity = Vector3.zero;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        //if (other.GetComponent<PlayerMovement>().enemiesDefeated >= 15)
+        //{
+            //return;
+        //}
+        //else
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                SpawnEnemy();
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            enemy.gameObject.GetComponent<EnemyController>().canMove = true;
+
+        }
     }
 }

@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     private float canMoveCountdownTimer;
     public int currentHealth = 0;
     public int damageGiven = 1;
-    private bool canMove = true;
+    public bool canMove = true;
     private SpriteRenderer sprend;
 
     void Start()
@@ -71,11 +71,11 @@ public class EnemyController : MonoBehaviour
 
             if (otherObject.transform.position.x > transform.position.x)
             {
-                otherObject.gameObject.GetComponent<PlayerHealth>().GetKnockedBack(knockbackForce, knockbackUpwardForce);
+                otherObject.gameObject.GetComponent<PlayerController>().GetKnockedBack(knockbackForce, knockbackUpwardForce);
             }
             else
             {
-                otherObject.gameObject.GetComponent<PlayerHealth>().GetKnockedBack(-knockbackForce, knockbackUpwardForce);
+                otherObject.gameObject.GetComponent<PlayerController>().GetKnockedBack(-knockbackForce, knockbackUpwardForce);
             }
         }
     }
@@ -97,7 +97,7 @@ public class EnemyController : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                Destroy(gameObject, 0.3f);
+                //Destroy(gameObject, 0.3f);
             }
         }
     }

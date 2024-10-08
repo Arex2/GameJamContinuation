@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class TravelingPlatformSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject platform;
+    [SerializeField] private float spawnTimer = 7f;
+    private float spawnCountdownTimer;
+
+    private void Start()
     {
-        
+        spawnCountdownTimer = spawnTimer;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (spawnCountdownTimer > 0)
+            spawnCountdownTimer -= Time.deltaTime;
+
+        if (spawnCountdownTimer <= 0)
+        {
+            spawnCountdownTimer = spawnTimer;
+            SpawnPlatform();
+        }
+    }
+
+    private void SpawnPlatform()
+    {
+        Instantiate(platform, transform.position, platform.transform.localRotation);
     }
 }

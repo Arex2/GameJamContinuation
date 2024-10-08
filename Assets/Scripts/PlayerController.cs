@@ -91,8 +91,6 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(horizontalValue * moveSpeed * Time.deltaTime, rb.velocity.y);
     }
 
-
-
     private void FlipSprite(bool direction)
     {
         spriteRenderer.flipX = direction;
@@ -131,9 +129,8 @@ public class PlayerController : MonoBehaviour
         GameObject projectile = Instantiate(Resources.Load<GameObject>("Projectile"), transform.position, Quaternion.Euler(0, 0, lookAngle));
         projectile.GetComponent<SpriteRenderer>().sprite = projectileSprites[Random.Range(0, projectileSprites.Length)];
         projectile.GetComponent<Rigidbody2D>().AddForce(GetMousePosition() * projectileForce);
-
-
     }
+
     private void ShootBomb()
     {
 
@@ -146,6 +143,17 @@ public class PlayerController : MonoBehaviour
         aimPoint.Normalize();
 
         return aimPoint;
+    }
 
+    public void GetKnockedBack(float knockbackForce, float knockbackUpwardForce)
+    {
+        canMove = false;
+        rb.AddForce(new Vector2(knockbackForce, knockbackUpwardForce));
+        Invoke("CanMoveAgain", 0.25f);
+    }
+
+    private void CanMoveAgain()
+    {
+        canMove = true;
     }
 }
