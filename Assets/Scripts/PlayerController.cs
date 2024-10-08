@@ -10,12 +10,14 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float jumpForce = 150f;
+    [SerializeField] private Transform footL, footR;
+    [SerializeField] private LayerMask whatIsGround;
     private float horizontalValue;
+    private float rayDistance = 0.25f;
     private bool canMove;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-    [SerializeField] private Transform footL, footR;
-    [SerializeField] private LayerMask whatIsGround;
+
     private float rayDistance = 0.25f;
 
     private bool canShoot;
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     public Sprite[] projectileSprites;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,7 +84,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()//"går på ett jämnt intervall 60 gånger i sekunden"
+    private void FixedUpdate()//"gï¿½r pï¿½ ett jï¿½mnt intervall 60 gï¿½nger i sekunden"
     {
         if (!canMove)
         {
