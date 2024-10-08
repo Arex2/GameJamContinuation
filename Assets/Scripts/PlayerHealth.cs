@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     {
         loseHealth = true;
         EventController.onDeath += Test;
+        EventController.onHPClick += AddHealth;
     }
     private void Test()
     {
