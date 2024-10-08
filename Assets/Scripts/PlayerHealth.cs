@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     private float timer;
 
     [SerializeField] private Slider healthSlider;
+    [SerializeField] private TMP_Text healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update() //VARA I FIXED UPDATE?
     {
-        if (loseHealth)
+        if (loseHealth && currentHealth > 0)
         {
             //lose health
             Timer();
@@ -56,12 +58,14 @@ public class PlayerHealth : MonoBehaviour
             return;
         currentHealth+= 10;
         UpdateHealthBar();
+        UpdateHealthText();
     }
 
     void MinusHealth()
     {
         currentHealth--;
         UpdateHealthBar();
+        UpdateHealthText();
     }
 
     private void UpdateHealthBar()
@@ -78,6 +82,11 @@ public class PlayerHealth : MonoBehaviour
             fillColor.color = redHealth;
         }
         */
+    }
+
+    private void UpdateHealthText()
+    {
+        healthText.text = currentHealth.ToString();
     }
 
 
