@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
     void DestroyProjectile()
     {
         var rotationAtImpact = this.transform.rotation;
-        Instantiate(_particleSystem, transform.position, Quaternion.Inverse(rotationAtImpact));
+        Instantiate(_particleSystem, transform.position, transform.rotation);// Quaternion.Inverse(rotationAtImpact));
         Destroy(this.gameObject);
     }
 }
