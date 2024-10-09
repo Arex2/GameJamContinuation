@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     private int bombCount = 0;
 
     [SerializeField]
+    private TMP_Text bombText;
+
+    [SerializeField]
     public Sprite[] projectileSprites;
 
     // Start is called before the first frame update
@@ -93,6 +96,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("Shoot 2");
                     ShootBomb();
                     bombCount--;
+                    UpdateBombText();
                     canThrowBomb = false;
                 }
                 timer2 = chargeTime;
@@ -145,6 +149,7 @@ public class PlayerController : MonoBehaviour
         {
             AddBomb();
             Destroy(collision.gameObject);
+            UpdateBombText();
         }
     }
 
@@ -216,6 +221,11 @@ public class PlayerController : MonoBehaviour
     private void AddBomb()
     {
         bombCount++;
+    }
+
+    private void UpdateBombText()
+    {
+        bombText.text = bombCount.ToString();
     }
 
     private void CanMoveAgain()
