@@ -20,10 +20,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
-    private bool canShoot;
-    private float timer;
-    private float cooldown1 = 0.25f;
+    private bool canShoot, canThrowBomb;
+    private float timer, timer2;
+    private float cooldown = 0.25f;
+    private float chargeTime = 0.75f;
     private int projectileForce = 1000;
+    private int bombCount = 0;
 
     [SerializeField]
     public Sprite[] projectileSprites;
@@ -31,13 +33,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //bombCount = 10;
         EventController.onDeath += Respawn;
 
         canMove = true;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        timer = cooldown1;
+        timer = cooldown;
+        timer2 = chargeTime;
         lowHealthImage.SetActive(false);
     }
 
@@ -61,6 +65,19 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
+
+        if(Input.GetButton("Fire2"))
+        {
+            //charge up timer for bomb throw
+            timer2 -= Time.deltaTime;
+            if (timer2 <= 0.0f)
+            {
+                canThrowBomb = true;
+                timer2 = chargeTime;
+            }
+
+        }
+
         if(!IsPointerOverGameObjectClickable())
         {
             if (Input.GetButtonDown("Fire1") && canShoot)
@@ -69,10 +86,16 @@ public class PlayerController : MonoBehaviour
                 ShootProjectile();
                 canShoot = false;
             }
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonUp("Fire2"))
             {
-                Debug.Log("Shoot 2");
-                ShootBomb();
+                if (bombCount > 0 && canThrowBomb)
+                {
+                    Debug.Log("Shoot 2");
+                    ShootBomb();
+                    bombCount--;
+                    canThrowBomb = false;
+                }
+                timer2 = chargeTime;
             }
         }
 
@@ -95,14 +118,14 @@ public class PlayerController : MonoBehaviour
             lowHealthImage.SetActive(true);
         }
 
-        //cooldown timer
+        //cooldown timer for basic attack
         if (canShoot == false)
         {
             timer -= Time.deltaTime;
             if (timer <= 0.0f)
             {
                 canShoot = true;
-                timer = cooldown1;
+                timer = cooldown;
             }
         }
     }
@@ -114,6 +137,15 @@ public class PlayerController : MonoBehaviour
             return;
         }
         rb.velocity = new Vector2(horizontalValue * moveSpeed * Time.deltaTime, rb.velocity.y);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("BombPickup"))
+        {
+            AddBomb();
+            Destroy(collision.gameObject);
+        }
     }
 
     private void FlipSprite(bool direction)
@@ -158,7 +190,11 @@ public class PlayerController : MonoBehaviour
 
     private void ShootBomb()
     {
-
+        var mousepos = GetMousePosition();
+        var lookAngle = Mathf.Atan2(mousepos.y, mousepos.x) * Mathf.Rad2Deg;
+        GameObject projectile = Instantiate(Resources.Load<GameObject>("Bomb"), transform.position, Quaternion.Euler(0, 0, lookAngle));
+        //projectile.GetComponent<SpriteRenderer>().sprite = projectileSprites[Random.Range(0, projectileSprites.Length)];
+        projectile.GetComponent<Rigidbody2D>().AddForce(GetMousePosition() * projectileForce);
     }
 
     private Vector3 GetMousePosition()
@@ -175,6 +211,11 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         rb.AddForce(new Vector2(knockbackForce, knockbackUpwardForce));
         Invoke("CanMoveAgain", 0.25f);
+    }
+
+    private void AddBomb()
+    {
+        bombCount++;
     }
 
     private void CanMoveAgain()
