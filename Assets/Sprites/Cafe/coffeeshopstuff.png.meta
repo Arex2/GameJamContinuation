@@ -1,0 +1,1236 @@
+fileFormatVersion: 2
+guid: 87fbf166c01341848bcb1e144c1b3b5b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: coffeeshopstuff_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 125
+        width: 116
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c77ae06be7ad442a987650666b18ad
+      internalID: -264567275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 99
+        width: 187
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48652c391067f9488ecb515e4c03644
+      internalID: -1305853802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_2
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 64
+        width: 23
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971017c15a26562499c3070b6efba5f6
+      internalID: -206779229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_3
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 64
+        width: 23
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66faa7b135640fa4cb1fa1e2275106f0
+      internalID: 975204563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_4
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 87
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69829780a60baa548bc2fa9250effe90
+      internalID: -1689776855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_5
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 87
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82693da310dc849468e4cd16e2d1f555
+      internalID: -689792135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_6
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 87
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a27001bffd6164ab7c2bc2318a6437
+      internalID: -1162761806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_7
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 87
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8b72fd044a30d42b91afa58221d923
+      internalID: 1910182326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_8
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 87
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f18d3602a9a5cf43ba3c0b87931901d
+      internalID: 443026103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_9
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 87
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809e8a611664a6449aa705fc69bc2223
+      internalID: 1650725690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_10
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 76
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7efc9a2e9114a499672ddc94952ecc
+      internalID: -734547253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_11
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 76
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eeb41fe984eaad45b3d2b78d94b0f59
+      internalID: -619272059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_12
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 64
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fec9463ab4cd644a1340285024335f
+      internalID: -1775696996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_13
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 64
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5fc50110604144e98df98988ddfdb6
+      internalID: 815068710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce90c4aabdfbe4e409477025f7038864
+      internalID: -911128304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_15
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 56
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0978c46a4c0d104b8389ca3b3673fef
+      internalID: 1980584956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_16
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 56
+        width: 8
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b74c9a8a0876e448f84f6a3b75bde8
+      internalID: 279109569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_17
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 77
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a7bad7b77293e4db8b5ab26f9bad02
+      internalID: -547708058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_18
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 77
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5bc2ed86265b6c4fab4f6bce9c3229b
+      internalID: -322545763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_19
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 77
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339b795033bacb34bb9fea28e567b4a0
+      internalID: 321566077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_20
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 77
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661f91cf9e39b6548ad266a1f73915d5
+      internalID: -829612184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_21
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 77
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34f92b3e4fce7743a1120212cc7f01a
+      internalID: 3936004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_22
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 77
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49486e27dafc3604284c5500fd12191b
+      internalID: -1581053580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_23
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 56
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c3c72d847f70d4292b593882d9cd38
+      internalID: 957875529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_24
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 56
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4675678bda8aa343826650d396e40da
+      internalID: 1611214673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_25
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 56
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e261fe2c894ecf498c889e20125de05
+      internalID: -801599717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_26
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 63
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88477e8d9ce6d7f4488e393e119ed052
+      internalID: 744260612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_27
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 63
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432f64b50836b834abf65584b60a37de
+      internalID: -1549049347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_28
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 63
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b598d8e34ff2aa3488685d1f5a029a6a
+      internalID: 636870046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_29
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 63
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfdf480ffe9996747896b81a026ac2ca
+      internalID: 1851694021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_30
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 41
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d53036ca8dc4f343af71591d8e39e9e
+      internalID: 1856023163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_31
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 44
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd5b6b32be55214aac1a40f11f9698d
+      internalID: 22244790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_32
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 53
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5197d8038b2e1424cadaf652a67a1100
+      internalID: -2038455281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_33
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 53
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01bf67f03771f04680af0245a2aa50f
+      internalID: -1162157420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_34
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 53
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ec58b451e33ce44a6e59da08d306d8
+      internalID: 1630938951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_35
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 53
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8f629f4363db7468b2bd697f3fd39e
+      internalID: 1556294196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_36
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 6
+        width: 81
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e81250a2a39a3d4e805f3a6d76c1d52
+      internalID: -1794042564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_37
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 29
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6803633ba03494e4d8b9f87d61e13db0
+      internalID: 1279329715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_38
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 29
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93315e51ddaca3246a384e03d5e6a8ef
+      internalID: -855397189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_39
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 7
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e591d9d8c137da4c93cb58319fd1536
+      internalID: 157912834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_40
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 26
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d047d20bb61673943a29a9cf70f806f0
+      internalID: -1968740318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_41
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 26
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f187dbac844b048a5db7d966e679aa
+      internalID: -1658939884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_42
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 7
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59ece20559b83645ae3e9c3259a4f0a
+      internalID: 1127698040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_43
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 7
+        width: 4
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c35cc185f9d07945a1d5e2abd8390f1
+      internalID: 1310123987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_44
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 31
+        width: 4
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75183ec66c1cb1943a2ac8e8835ee679
+      internalID: -1859164070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_45
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 7
+        width: 4
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153c44906377a3d4fa37dacab28f63c2
+      internalID: 1360389547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_46
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 8
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29223d4d896e80488b48da1767c8db7
+      internalID: 224962785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_47
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 8
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c9f8ca5b0a4b1438c97f914155d67c
+      internalID: 2102413508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_48
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 7
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e43e6ac3276ffd4e8a829a8b2332fd7
+      internalID: 827270299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_49
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 7
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e835a14d0d4f0114eacf6156ea33acb4
+      internalID: 1663841454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffeeshopstuff_50
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 7
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e939c623757e5dd42b236403f2faa4c5
+      internalID: 277889484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      coffeeshopstuff_0: -264567275
+      coffeeshopstuff_1: -1305853802
+      coffeeshopstuff_10: -734547253
+      coffeeshopstuff_11: -619272059
+      coffeeshopstuff_12: -1775696996
+      coffeeshopstuff_13: 815068710
+      coffeeshopstuff_14: -911128304
+      coffeeshopstuff_15: 1980584956
+      coffeeshopstuff_16: 279109569
+      coffeeshopstuff_17: -547708058
+      coffeeshopstuff_18: -322545763
+      coffeeshopstuff_19: 321566077
+      coffeeshopstuff_2: -206779229
+      coffeeshopstuff_20: -829612184
+      coffeeshopstuff_21: 3936004
+      coffeeshopstuff_22: -1581053580
+      coffeeshopstuff_23: 957875529
+      coffeeshopstuff_24: 1611214673
+      coffeeshopstuff_25: -801599717
+      coffeeshopstuff_26: 744260612
+      coffeeshopstuff_27: -1549049347
+      coffeeshopstuff_28: 636870046
+      coffeeshopstuff_29: 1851694021
+      coffeeshopstuff_3: 975204563
+      coffeeshopstuff_30: 1856023163
+      coffeeshopstuff_31: 22244790
+      coffeeshopstuff_32: -2038455281
+      coffeeshopstuff_33: -1162157420
+      coffeeshopstuff_34: 1630938951
+      coffeeshopstuff_35: 1556294196
+      coffeeshopstuff_36: -1794042564
+      coffeeshopstuff_37: 1279329715
+      coffeeshopstuff_38: -855397189
+      coffeeshopstuff_39: 157912834
+      coffeeshopstuff_4: -1689776855
+      coffeeshopstuff_40: -1968740318
+      coffeeshopstuff_41: -1658939884
+      coffeeshopstuff_42: 1127698040
+      coffeeshopstuff_43: 1310123987
+      coffeeshopstuff_44: -1859164070
+      coffeeshopstuff_45: 1360389547
+      coffeeshopstuff_46: 224962785
+      coffeeshopstuff_47: 2102413508
+      coffeeshopstuff_48: 827270299
+      coffeeshopstuff_49: 1663841454
+      coffeeshopstuff_5: -689792135
+      coffeeshopstuff_50: 277889484
+      coffeeshopstuff_6: -1162761806
+      coffeeshopstuff_7: 1910182326
+      coffeeshopstuff_8: 443026103
+      coffeeshopstuff_9: 1650725690
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
