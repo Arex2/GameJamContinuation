@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using static Unity.VisualScripting.Member;
 using static UnityEngine.GraphicsBuffer;
 
@@ -60,17 +61,22 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        if(Input.GetButtonDown("Fire1") && canShoot)
+        if(!IsMouseOverUI())
         {
-            Debug.Log("Shoot 1");
-            ShootProjectile();
-            canShoot = false;
+            if (Input.GetButtonDown("Fire1") && canShoot)
+            {
+                IsMouseOverUI();
+                Debug.Log("Shoot 1");
+                ShootProjectile();
+                canShoot = false;
+            }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                Debug.Log("Shoot 2");
+                ShootBomb();
+            }
         }
-        if (Input.GetButtonDown("Fire2"))
-        {
-            Debug.Log("Shoot 2");
-            ShootBomb();
-        }
+
 
         if(GetComponent<PlayerHealth>().CurrentHealth > 800)
         {
@@ -175,5 +181,14 @@ public class PlayerController : MonoBehaviour
     private void CanMoveAgain()
     {
         canMove = true;
+    }
+
+    private bool IsMouseOverUI()
+    {
+        if(EventSystem.current.IsPointerOverGameObject())
+        {
+            return true;
+        }
+        return false;
     }
 }
