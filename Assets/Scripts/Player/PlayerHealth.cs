@@ -15,6 +15,11 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private TMP_Text healthText;
 
+    public int CurrentHealth
+    {
+        get { return currentHealth; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
