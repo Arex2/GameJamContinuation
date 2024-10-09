@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField]
+    ParticleSystem _particleSystem;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //find enemy
@@ -16,6 +18,8 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
+        var rotationAtImpact = this.transform.rotation;
+        Instantiate(_particleSystem, transform.position, transform.rotation);// Quaternion.Inverse(rotationAtImpact));
         Destroy(this.gameObject);
     }
 }
