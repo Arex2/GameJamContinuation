@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Projectile
   - Enemy
+  - Clickable
   layers:
   - Default
   - TransparentFX

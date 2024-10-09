@@ -61,11 +61,10 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        if(!IsMouseOverUI())
+        if(!IsPointerOverGameObjectClickable())
         {
             if (Input.GetButtonDown("Fire1") && canShoot)
             {
-                IsMouseOverUI();
                 Debug.Log("Shoot 1");
                 ShootProjectile();
                 canShoot = false;
@@ -183,12 +182,49 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    /*
+    public bool RaycastAll(PointerEventData eventData, List<RaycastResult> raycastResults)
+    {
+        foreach (RaycastResult result in raycastResults)
+        {
+            if(result.ToString() == "Button")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private bool IsMouseOverUI()
     {
         if(EventSystem.current.IsPointerOverGameObject())
         {
             return true;
         }
+        return false;
+    }
+        */
+
+    //FROM : https://stackoverflow.com/a/76350447
+    private bool IsPointerOverGameObjectClickable()
+    {
+        PointerEventData pointer = new PointerEventData(EventSystem.current);
+        pointer.position = Input.mousePosition;
+
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointer, raycastResults);
+
+        if (raycastResults.Count > 0)
+        {
+            foreach (var go in raycastResults)
+            {
+                if (go.gameObject.CompareTag("Clickable"))
+                {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 }
