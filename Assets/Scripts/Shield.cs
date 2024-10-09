@@ -24,11 +24,15 @@ public class Shield : MonoBehaviour
         if (activeCountdownTimer > 0)
         {
             activeCountdownTimer -= Time.deltaTime;
-            gameObject.SetActive(false);
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            //gameObject.SetActive(false);
         }
         else
         {
-            gameObject.SetActive(true);
+            GetComponent<CapsuleCollider2D>().enabled = true;
+            GetComponent<SpriteRenderer>().enabled = true;
+            //gameObject.SetActive(true);
         }
     }
 

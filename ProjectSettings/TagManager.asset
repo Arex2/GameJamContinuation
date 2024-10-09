@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Clickable
   - BombPickup
+  - Shield
+  - EnemyBlock
   layers:
   - Default
   - TransparentFX
@@ -19,9 +21,9 @@ TagManager:
   - Ground
   - Projectile
   - Player
-  - 
-  - 
-  - 
+  - Shield
+  - EnemyBlock
+  - BombPickup
   - 
   - 
   - 
