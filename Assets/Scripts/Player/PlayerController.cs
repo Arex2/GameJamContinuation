@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject lowHealthImage;
     [SerializeField] private float moveSpeed = 800f;
-    [SerializeField] private float jumpForce = 150f;
+    [SerializeField] private float jumpForce = 800f;
+    [SerializeField] private float dashForce = 12000f;
     [SerializeField] private Transform footL, footR;
     [SerializeField] private LayerMask whatIsGround;
     private float horizontalValue;
@@ -27,6 +28,9 @@ public class PlayerController : MonoBehaviour
     private int projectileForce = 1000;
     private int bombCount = 0;
 
+    public bool hasAbilityDoubleJump, hasAbilityDash;
+    private bool hasDoubleJumped, hasDashed;
+
     [SerializeField]
     private TMP_Text bombText;
 
@@ -37,6 +41,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //bombCount = 10;
+        hasAbilityDash = true;
+        hasAbilityDoubleJump = true;
+
         EventController.onDeath += Respawn;
 
         canMove = true;
@@ -66,6 +73,17 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.zero; // so add force isn't additive
             Jump();
+        }
+        else if(Input.GetButtonDown("Jump") && hasAbilityDoubleJump && !hasDoubleJumped)
+        {
+            Jump();
+            hasDoubleJumped = true;
+        }
+
+        if(Input.GetButtonDown("Dash") && hasAbilityDash && !hasDashed)
+        {
+            Dash();
+            hasDashed = true;
         }
 
 
@@ -163,6 +181,12 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(new Vector2(0, jumpForce));
     }
 
+    private void Dash()
+    {
+        rb.AddForce(new Vector2(dashForce * horizontalValue, rb.velocity.y));
+        //rb.velocity = new Vector2(dashForce * horizontalValue, rb.velocity.y);
+    }
+
     private bool CheckIfGrounded()
     {
         RaycastHit2D hitL = Physics2D.Raycast(footL.position, Vector2.down, rayDistance, whatIsGround);
@@ -170,6 +194,8 @@ public class PlayerController : MonoBehaviour
 
         if (hitL.collider != null && hitL.collider.CompareTag("Ground") || hitR.collider != null && hitR.collider.CompareTag("Ground"))
         {
+            hasDoubleJumped = false;
+            hasDashed = false;
             return true;
         }
         else
