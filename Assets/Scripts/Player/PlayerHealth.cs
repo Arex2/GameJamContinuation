@@ -115,5 +115,10 @@ public class PlayerHealth : MonoBehaviour
         healthText.text = currentHealth.ToString();
     }
 
+    public void UpdateMaxHealthText()
+    {
+
+    }
+
 
 }
