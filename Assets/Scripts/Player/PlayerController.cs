@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private int bombCount = 0;
 
     [SerializeField] private ParticleSystem dashParticles;
+    [SerializeField] private TrailRenderer dashTrail;
     public bool hasAbilityDoubleJump, hasAbilityDash;
     private bool hasDoubleJumped, hasDashed;
 
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         hasAbilityDash = true;
         hasAbilityDoubleJump = true;
         dashParticles.Stop();
+        dashTrail.enabled = false;
 
         EventController.onDeath += Respawn;
 
@@ -185,6 +187,7 @@ public class PlayerController : MonoBehaviour
 
     private void Dash()
     {
+        dashTrail.enabled = true;
         dashParticles.Play();
         Invoke("StopParticleSystem", 0.2f);
         rb.AddForce(new Vector2(dashForce * horizontalValue, rb.velocity.y));
@@ -193,6 +196,7 @@ public class PlayerController : MonoBehaviour
     private void StopParticleSystem()
     {
         dashParticles.Stop();
+        dashTrail.enabled = false;
     }
 
     private bool CheckIfGrounded()
