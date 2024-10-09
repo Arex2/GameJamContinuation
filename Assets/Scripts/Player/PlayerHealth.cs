@@ -20,6 +20,17 @@ public class PlayerHealth : MonoBehaviour
         get { return currentHealth; }
     }
 
+    public int MaxHealth
+    {
+        get { return maxHealth; }
+        set 
+        { 
+            maxHealth = value;
+            UpdateHealthBar();
+            UpdateHealthText();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +56,13 @@ public class PlayerHealth : MonoBehaviour
             //player die
             EventController.RaiseOnDeath();
         }
+
+        if (currentHealth > maxHealth) //should not be able to get over max health
+        {
+            currentHealth = maxHealth;
+            UpdateHealthBar();
+            UpdateHealthText();
+        }
     }
 
     private void Timer()
@@ -60,7 +78,10 @@ public class PlayerHealth : MonoBehaviour
     public void AddHealth()
     {
         if (currentHealth >= maxHealth)
+        {
+            currentHealth = maxHealth;
             return;
+        }
         currentHealth+= 10;
         UpdateHealthBar();
         UpdateHealthText();
