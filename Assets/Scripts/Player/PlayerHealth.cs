@@ -26,8 +26,10 @@ public class PlayerHealth : MonoBehaviour
         set 
         { 
             maxHealth = value;
+            UpdateHealthSlider();
             UpdateHealthBar();
             UpdateHealthText();
+            SpawnMaxHealthChangeText();
         }
     }
 
@@ -120,5 +122,21 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    private void UpdateHealthSlider()
+    {
+        healthSlider.maxValue = maxHealth;
+    }
+
+    private void SpawnMaxHealthChangeText()
+    {
+        var offset = new Vector3(-400,200,0);
+        TMP_Text tempTextBox = Instantiate(Resources.Load<TMP_Text>("PopupHealthText"), transform.position + offset, transform.rotation);//, Input.mousePosition - (offset / 2), transform.rotation) as TMP_Text; //Camera.main.ScreenToWorldPoint(Input.mousePosition)
+        //Parent to the panel 
+        tempTextBox.transform.SetParent(GameObject.Find("Canvas").transform, false);
+        
+        //change text
+        tempTextBox.text = "-10maxhp"; //parameter för int amount changed
+        tempTextBox.color = Color.red;
+    }
 
 }

@@ -30,12 +30,13 @@ public class BombGambleMachine : MonoBehaviour
         else
         {
             Gamble();
+            player.GetComponent<PlayerHealth>().MaxHealth -= 25;
         }
     }
 
     private bool CheckFreeStealState()
     {
-        if (player.GetComponent<PlayerHealth>().MaxHealth < 10 && player.GetComponent<PlayerController>().BombCount == 0)
+        if (player.GetComponent<PlayerHealth>().MaxHealth < 100 && player.GetComponent<PlayerController>().BombCount == 0)
             return true;
         return false;    
     }
