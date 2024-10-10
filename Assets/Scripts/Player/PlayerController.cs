@@ -187,6 +187,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        rb.velocity = Vector2.zero;
         rb.AddForce(new Vector2(0, jumpForce));
     }
 
