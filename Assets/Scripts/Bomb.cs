@@ -6,6 +6,20 @@ public class Bomb : MonoBehaviour
 {
     [SerializeField]
     ParticleSystem _particleSystem;
+
+    Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        transform.Rotate(new Vector3(0, 0, 1.5f * rb.velocity.normalized.x));
+        Debug.Log(rb.velocity.normalized.x);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //find enemy
