@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class OneHPZone : MonoBehaviour
 {
@@ -14,8 +13,6 @@ public class OneHPZone : MonoBehaviour
             originalMaxHealth = collision.GetComponent<PlayerHealth>().MaxHealth;
             originalCurrentHealth = collision.GetComponent<PlayerHealth>().CurrentHealth;
             collision.GetComponent<PlayerHealth>().MaxHealth = 1;
-            DisableCookieClicker();
-
         }
     }
 
@@ -29,21 +26,6 @@ public class OneHPZone : MonoBehaviour
             {
                 collision.GetComponent<PlayerHealth>().AddHealth();
             }
-            EnableCookieClicker();
         }
-    }
-
-    private void DisableCookieClicker()
-    {
-        GameObject.Find("/CookieClicker/Canvas/Panel").GetComponent<Image>().enabled = false;
-        GameObject.Find("/CookieClicker/Canvas/Button").GetComponent<Button>().enabled = false;
-        GameObject.Find("/CookieClicker/Canvas/Button").GetComponent<Image>().enabled = false;
-    }
-
-    private void EnableCookieClicker()
-    {
-        GameObject.Find("/CookieClicker/Canvas/Panel").GetComponent<Image>().enabled = true;
-        GameObject.Find("/CookieClicker/Canvas/Button").GetComponent<Button>().enabled = true;
-        GameObject.Find("/CookieClicker/Canvas/Button").GetComponent<Image>().enabled = true;
     }
 }

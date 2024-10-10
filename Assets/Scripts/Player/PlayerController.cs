@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector3 spawnPos;
 
+    private Animator anim;
 
     [SerializeField] private ParticleSystem chargeParticles;
     [SerializeField] private ParticleSystem chargeDoneParticles;
@@ -54,11 +55,12 @@ public class PlayerController : MonoBehaviour
         dashParticles.Stop();
         dashTrail.enabled = false;
 
-        EventController.onDeath += Respawn;
+        EventController.onDeath += Death;
 
         canMove = true;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         timer = cooldown;
         timer2 = chargeTime;
@@ -76,6 +78,8 @@ public class PlayerController : MonoBehaviour
     {
         horizontalValue = Input.GetAxis("Horizontal");
 
+        //FLIP TO FACE MOVE DIRECTION
+        /*
         if (horizontalValue < 0f)
         {
             FlipSprite(true);
@@ -84,6 +88,22 @@ public class PlayerController : MonoBehaviour
         {
             FlipSprite(false);
         }
+        */
+
+        //FLIP TO FACE MOUSE
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 aimPoint = (Vector3)(Input.mousePosition - screenPoint);
+
+        if (aimPoint.x > transform.position.x )
+        {
+
+            FlipSprite(false);
+        }
+        else if (aimPoint.x < transform.position.x)
+        {
+            FlipSprite(true);
+        }
+
 
         if (Input.GetButtonDown("Jump") && CheckIfGrounded())
         {
@@ -127,6 +147,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Shoot 1");
                 ShootProjectile();
+                anim.SetTrigger("attack");
                 canShoot = false;
             }
             if (Input.GetButtonUp("Fire2"))
@@ -136,10 +157,12 @@ public class PlayerController : MonoBehaviour
                 {
                     Debug.Log("Shoot 2");
                     ShootBomb();
+                    anim.SetTrigger("attack");
                     bombCount--;
                     UpdateBombText();
                     canThrowBomb = false;
                     chargeDoneParticles.Stop();
+
                 }
                 timer2 = chargeTime;
             }
@@ -175,6 +198,16 @@ public class PlayerController : MonoBehaviour
                 timer = cooldown;
             }
         }
+
+
+
+        //ANIMATIONS
+        anim.SetFloat("MoveSpeed", Mathf.Abs(rb.velocity.x));
+        anim.SetFloat("VerticalSpeed", rb.velocity.y);
+        anim.SetBool("IsGrounded", CheckIfGrounded());
+        //anim.SetBool("IsCrouching", isCrouched);
+
+
     }
 
     private void FixedUpdate()//"g�r p� ett j�mnt intervall 60 g�nger i sekunden"
@@ -238,10 +271,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Death()
+    {
+        anim.SetBool("respawn", false);
+        anim.SetTrigger("death");
+        Invoke("Respawn", 1f);
+    }
+
     private void Respawn()
     {
         //should wait a second and then
         //do respawn things
+        anim.SetBool("respawn", true);
         transform.position = spawnPos;
         EventController.RaiseOnRespawn();
     }

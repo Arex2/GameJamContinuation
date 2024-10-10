@@ -17,7 +17,7 @@ public class Bomb : MonoBehaviour
     private void Update()
     {
         transform.Rotate(new Vector3(0, 0, 1.5f * rb.velocity.normalized.x));
-        Debug.Log(rb.velocity.normalized.x);
+        //Debug.Log(rb.velocity.normalized.x);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,6 +27,7 @@ public class Bomb : MonoBehaviour
         {
             //collision.gameObject.GetComponent<EnemyMovement>.TakeDamage(3);
         }
+        Debug.Log("Collision objekt: " + collision.gameObject.name);
         DestroyProjectile();
     }
 
