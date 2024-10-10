@@ -10,6 +10,8 @@ public class BombGambleMachine : MonoBehaviour
     private Transform player;
     [SerializeField]
     private GameObject bomb;
+    [SerializeField]
+    private GameObject nothingDrop;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -59,6 +61,7 @@ public class BombGambleMachine : MonoBehaviour
         else //drop nothing
         {
             //instantiate sad particle system
+            DropNothing();
         }
     }
 
@@ -75,6 +78,11 @@ public class BombGambleMachine : MonoBehaviour
     private void FreeDeal()
     {
         DropBomb(1);
+    }
+
+    private void DropNothing()
+    {
+        nothingDrop.GetComponent<Animator>().SetTrigger("PlayAnimation");
     }
 
     private void FreeDealMessage()
