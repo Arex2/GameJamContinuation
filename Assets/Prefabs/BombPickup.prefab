@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8644858462524642061}
   - component: {fileID: 3438297466771849506}
   - component: {fileID: 5701076934078931859}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BombPickup
   m_TagString: BombPickup
   m_Icon: {fileID: 0}
@@ -118,9 +118,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.031479895, y: -0.080447674}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.43237722
 --- !u!50 &5701076934078931859
 Rigidbody2D:
   serializedVersion: 4
