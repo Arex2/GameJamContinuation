@@ -27,6 +27,7 @@ public class Bomb : MonoBehaviour
         {
             //collision.gameObject.GetComponent<EnemyMovement>.TakeDamage(3);
         }
+        Debug.Log("Collision objekt: " + collision.gameObject.name);
         DestroyProjectile();
     }
 
