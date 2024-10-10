@@ -32,7 +32,6 @@ public class EnemyController : MonoBehaviour
         {
             canMove = true;
             GetComponent<CapsuleCollider2D>().enabled = true;
-            GetComponent<BoxCollider2D>().enabled = true;
             GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }
@@ -54,50 +53,65 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D otherObject)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (otherObject.gameObject.CompareTag("EnemyBlock"))
+        if (other.gameObject.CompareTag("EnemyBlock"))
         {
             moveSpeed = -moveSpeed;
         }
 
-        if (otherObject.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             moveSpeed = -moveSpeed;
         }
-        if (otherObject.gameObject.CompareTag("Player"))
-        {
-            moveSpeed = -moveSpeed;
 
-            if (otherObject.transform.position.x > transform.position.x)
-            {
-                otherObject.gameObject.GetComponent<PlayerController>().GetKnockedBack(knockbackForce, knockbackUpwardForce);
-            }
-            else
-            {
-                otherObject.gameObject.GetComponent<PlayerController>().GetKnockedBack(-knockbackForce, knockbackUpwardForce);
-            }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D otherObject)
-    {
-        if (otherObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Projectile"))
         {
             canMoveCountdownTimer = canMoveTimer;
             currentHealth -= 1;
-            otherObject.GetComponent<Rigidbody2D>().velocity = new Vector2(otherObject.GetComponent<Rigidbody2D>().velocity.x, 0);
-            otherObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounce));
+            other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(other.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
+            other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounce));
             GetComponent<Animator>().SetTrigger("Hit");
             GetComponent<CapsuleCollider2D>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Rigidbody2D>().gravityScale = 0;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             canMove = false;
 
             if (currentHealth <= 0)
             {
-                //Destroy(gameObject, 0.3f);
+                //gameObject.SetActive = false;
+            }
+        }
+
+        if (other.gameObject.CompareTag("Shield"))
+        {
+            canMoveCountdownTimer = canMoveTimer;
+            currentHealth -= 5;
+            other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(other.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
+            other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounce));
+            GetComponent<Animator>().SetTrigger("Hit");
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            canMove = false;
+
+            if (currentHealth <= 0)
+            {
+                //gameObject.SetActive = false;
+            }
+        }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            moveSpeed = -moveSpeed;
+
+            if (other.transform.position.x > transform.position.x)
+            {
+                other.gameObject.GetComponent<PlayerController>().GetKnockedBack(knockbackForce, knockbackUpwardForce);
+            }
+            else
+            {
+                other.gameObject.GetComponent<PlayerController>().GetKnockedBack(-knockbackForce, knockbackUpwardForce);
             }
         }
     }
