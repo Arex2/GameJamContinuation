@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalValue = Input.GetAxis("Horizontal");
 
-        //FLIP TO FACE MOVE DIRECTION
+
         if(Input.GetButton("Fire1") || Input.GetButton("Fire2"))
         {
             //FLIP TO FACE MOUSE
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-
+            //FLIP TO FACE MOVE DIRECTION
             if (horizontalValue < 0f)
             {
                 FlipSprite(true);
