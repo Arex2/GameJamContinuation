@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private bool canMove;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private Vector3 spawnPos;
 
     private bool canShoot, canThrowBomb;
     private float timer, timer2;
@@ -59,6 +60,8 @@ public class PlayerController : MonoBehaviour
         timer = cooldown;
         timer2 = chargeTime;
         lowHealthImage.SetActive(false);
+
+        spawnPos = transform.position;
     }
 
     // Update is called once per frame
@@ -220,7 +223,10 @@ public class PlayerController : MonoBehaviour
 
     private void Respawn()
     {
+        //should wait a second and then
         //do respawn things
+        transform.position = spawnPos;
+        EventController.RaiseOnRespawn();
     }
 
     private void ShootProjectile()

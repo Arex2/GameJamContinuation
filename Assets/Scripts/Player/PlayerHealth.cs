@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static EventController;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private Slider healthSlider;
     public bool loseHealth;
+    private int trueHealth = 3;
     private int maxHealth = 1000;
     private int currentHealth = 1000;
     private float startTime = 0.05f; //time between 1hp draining
@@ -40,11 +42,9 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         loseHealth = true;
-        EventController.onDeath += Test;
+        EventController.onDeath += Death;
         EventController.onHPClick += AddHealth;
-    }
-    private void Test()
-    {
+        EventController.onRespawn += ResetPlayerHealth;
     }
 
     // Update is called once per frame
@@ -147,6 +147,23 @@ public class PlayerHealth : MonoBehaviour
 
 
         //tempTextBox.color = Color.red;
+    }
+
+    private void Death()
+    {
+        trueHealth--;
+        if (trueHealth < 0)
+        {
+            //GAMEOVER
+            //switch scene to main menu
+        }
+    }
+
+    private void ResetPlayerHealth()
+    {
+        currentHealth = maxHealth;
+        UpdateHealthBar();
+        UpdateHealthText();
     }
 
 }
