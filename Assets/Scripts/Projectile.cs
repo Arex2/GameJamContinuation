@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
         transform.Rotate(new Vector3(0, 0, 3f * rb.velocity.normalized.x));
-        Debug.Log(rb.velocity.normalized.x);
+        //Debug.Log(rb.velocity.normalized.x);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
