@@ -6721,6 +6721,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5681310322668866561, guid: 940dd2b71d5c94e488f432ae9c0bba33, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681310322668866561, guid: 940dd2b71d5c94e488f432ae9c0bba33, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.size
       value: 0
       objectReference: {fileID: 0}
