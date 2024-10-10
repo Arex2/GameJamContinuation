@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector3 spawnPos;
 
+
+    [SerializeField] private ParticleSystem chargeParticles;
+    [SerializeField] private ParticleSystem chargeDoneParticles;
     private bool canShoot, canThrowBomb;
     private float timer, timer2;
     private float cooldown = 0.25f;
@@ -59,6 +62,10 @@ public class PlayerController : MonoBehaviour
 
         timer = cooldown;
         timer2 = chargeTime;
+
+        chargeParticles.Stop();
+        chargeDoneParticles.Stop();
+
         lowHealthImage.SetActive(false);
 
         spawnPos = transform.position;
@@ -96,7 +103,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if(Input.GetButton("Fire2"))
+        if(Input.GetButton("Fire2") && bombCount > 0)
         {
             //charge up timer for bomb throw
             timer2 -= Time.deltaTime;
@@ -104,6 +111,12 @@ public class PlayerController : MonoBehaviour
             {
                 canThrowBomb = true;
                 timer2 = chargeTime;
+                chargeParticles.Stop();
+                chargeDoneParticles.Play();
+            }
+            if(!chargeParticles.isPlaying && !chargeDoneParticles.isPlaying)
+            {
+                chargeParticles.Play();
             }
 
         }
@@ -118,6 +131,7 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetButtonUp("Fire2"))
             {
+                chargeParticles.Stop();
                 if (bombCount > 0 && canThrowBomb)
                 {
                     Debug.Log("Shoot 2");
@@ -125,10 +139,12 @@ public class PlayerController : MonoBehaviour
                     bombCount--;
                     UpdateBombText();
                     canThrowBomb = false;
+                    chargeDoneParticles.Stop();
                 }
                 timer2 = chargeTime;
             }
         }
+
 
 
         if(GetComponent<PlayerHealth>().CurrentHealth > 800)
