@@ -49,11 +49,11 @@ public class ShopManager : MonoBehaviour
         DisableButton(button);
     }
 
-    public void BuyDamage()
+    public void BuyDamage(Button button)
     {
         player.GetComponent<PlayerHealth>().MaxHealth -= damageCost;
         UpdatePlayerMaxHealthText();
-        Projectile.damage++;
+        Projectile.damage ++;
         //player.GetComponent<PlayerController>().hasAbilityShield = true;
         //DisableButton(button);
     }
