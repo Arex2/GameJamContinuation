@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private ParticleSystem dashParticles;
     [SerializeField] private TrailRenderer dashTrail;
-    public bool hasAbilityDoubleJump, hasAbilityDash;
+    public bool hasAbilityDoubleJump, hasAbilityDash, hasAbilityShield;
     private bool hasDoubleJumped, hasDashed;
 
     [SerializeField]
@@ -50,8 +50,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //bombCount = 10;
-        hasAbilityDash = true;
-        hasAbilityDoubleJump = true;
+        //hasAbilityDash = true;
+        //hasAbilityDoubleJump = true;
         dashParticles.Stop();
         dashTrail.enabled = false;
 

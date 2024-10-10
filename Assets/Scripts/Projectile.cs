@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
     ParticleSystem _particleSystem;
     Rigidbody2D rb;
 
+    static public int damage = 1;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,7 +26,7 @@ public class Projectile : MonoBehaviour
         //find enemy
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            //collision.gameObject.GetComponent<EnemyMovement>.TakeDamage(1);
+            //collision.gameObject.GetComponent<EnemyMovement>.TakeDamage(damage);
         }
         DestroyProjectile();
     }

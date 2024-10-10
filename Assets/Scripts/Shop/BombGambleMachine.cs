@@ -12,6 +12,8 @@ public class BombGambleMachine : MonoBehaviour
     private GameObject bomb;
     [SerializeField]
     private GameObject nothingDrop;
+
+    private int cost = 1;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -32,7 +34,7 @@ public class BombGambleMachine : MonoBehaviour
         else
         {
             Gamble();
-            player.GetComponent<PlayerHealth>().MaxHealth -= 25;
+            player.GetComponent<PlayerHealth>().MaxHealth -= cost;
         }
     }
 
