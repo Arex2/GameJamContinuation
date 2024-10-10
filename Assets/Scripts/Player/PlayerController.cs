@@ -79,30 +79,39 @@ public class PlayerController : MonoBehaviour
         horizontalValue = Input.GetAxis("Horizontal");
 
         //FLIP TO FACE MOVE DIRECTION
-        /*
-        if (horizontalValue < 0f)
+        if(Input.GetButton("Fire1") || Input.GetButton("Fire2"))
         {
-            FlipSprite(true);
-        }
-        if (horizontalValue > 0f)
-        {
-            FlipSprite(false);
-        }
-        */
+            //FLIP TO FACE MOUSE
+            Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+            Vector3 aimPoint = (Vector3)(Input.mousePosition - screenPoint);
 
-        //FLIP TO FACE MOUSE
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        Vector3 aimPoint = (Vector3)(Input.mousePosition - screenPoint);
+            if (aimPoint.x > transform.position.x)
+            {
 
-        if (aimPoint.x > transform.position.x )
+                FlipSprite(false);
+            }
+            else if (aimPoint.x < transform.position.x)
+            {
+                FlipSprite(true);
+            }
+        }
+        else
         {
 
-            FlipSprite(false);
+            if (horizontalValue < 0f)
+            {
+                FlipSprite(true);
+            }
+            if (horizontalValue > 0f)
+            {
+                FlipSprite(false);
+            }
+
         }
-        else if (aimPoint.x < transform.position.x)
-        {
-            FlipSprite(true);
-        }
+
+        
+
+
 
 
         if (Input.GetButtonDown("Jump") && CheckIfGrounded())
