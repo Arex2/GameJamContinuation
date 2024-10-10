@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private float timer;
 
     [SerializeField] private TMP_Text healthText;
+    [SerializeField] private TMP_Text maxHealthText;
 
     public int CurrentHealth
     {
@@ -24,12 +25,14 @@ public class PlayerHealth : MonoBehaviour
     {
         get { return maxHealth; }
         set 
-        { 
+        {
+            int change = maxHealth - value;
+            SpawnMaxHealthChangeText(change);
             maxHealth = value;
             UpdateHealthSlider();
             UpdateHealthBar();
             UpdateHealthText();
-            SpawnMaxHealthChangeText();
+            UpdateMaxHealthText();
         }
     }
 
@@ -119,7 +122,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateMaxHealthText()
     {
-
+        maxHealthText.text = maxHealth.ToString();
     }
 
     private void UpdateHealthSlider()
@@ -127,16 +130,23 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.maxValue = maxHealth;
     }
 
-    private void SpawnMaxHealthChangeText()
+    private void SpawnMaxHealthChangeText(int change)
     {
         var offset = new Vector3(-400,200,0);
         TMP_Text tempTextBox = Instantiate(Resources.Load<TMP_Text>("PopupHealthText"), transform.position + offset, transform.rotation);//, Input.mousePosition - (offset / 2), transform.rotation) as TMP_Text; //Camera.main.ScreenToWorldPoint(Input.mousePosition)
         //Parent to the panel 
         tempTextBox.transform.SetParent(GameObject.Find("Canvas").transform, false);
-        
+
         //change text
-        tempTextBox.text = "-10maxhp"; //parameter för int amount changed
-        tempTextBox.color = Color.red;
+        if (change > 0)
+        {
+            tempTextBox.text = "-" + change + "max"; //parameter för int amount changed
+        }
+        else
+            tempTextBox.text = "+" + System.Math.Abs(change) + "max"; //parameter för int amount changed
+
+
+        //tempTextBox.color = Color.red;
     }
 
 }
