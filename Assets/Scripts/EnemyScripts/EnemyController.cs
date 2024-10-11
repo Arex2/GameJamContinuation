@@ -6,15 +6,19 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] public float moveSpeed = 1f;
     [SerializeField] private float bounce = 100f;
-    [SerializeField] private float knockbackForce = 200f;
-    [SerializeField] private float knockbackUpwardForce = 100f;
+    [SerializeField] public float knockbackForce = 200f;
+    [SerializeField] public float knockbackUpwardForce = 100f;
     [SerializeField] private float canMoveTimer = 0.5f;
     [SerializeField] private int startingHealth = 10;
-    private float canMoveCountdownTimer;
+    public float canMoveCountdownTimer;
     public int currentHealth = 10;
     public int damageGiven = 1;
     public bool canMove = true;
     public SpriteRenderer sprend;
+
+    public float CanMoveCountdownTimer => canMoveCountdownTimer;
+    public float KnockbackUpwardForce => knockbackUpwardForce;
+    public float KnockbackForce => knockbackForce;
 
     void Start()
     {
@@ -22,7 +26,7 @@ public class EnemyController : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (canMoveCountdownTimer > 0)
         {
@@ -68,6 +72,7 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.CompareTag("Projectile"))
         {
             EnemyHurt();
+            currentHealth -= 1;
             other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(other.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounce));
 
@@ -79,15 +84,10 @@ public class EnemyController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Shield"))
         {
-            canMoveCountdownTimer = canMoveTimer;
+            EnemyHurt();
             currentHealth -= 5;
             other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(other.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounce));
-            GetComponent<Animator>().SetTrigger("Hit");
-            GetComponent<CapsuleCollider2D>().enabled = false;
-            GetComponent<Rigidbody2D>().gravityScale = 0;
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            canMove = false;
 
             if (currentHealth <= 0)
             {
@@ -113,7 +113,6 @@ public class EnemyController : MonoBehaviour
     private void EnemyHurt()
     {
         canMoveCountdownTimer = canMoveTimer;
-        currentHealth -= 1;
         GetComponent<Animator>().SetTrigger("Hit");
         GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<Rigidbody2D>().gravityScale = 0;

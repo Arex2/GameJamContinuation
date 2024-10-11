@@ -1,0 +1,128 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HorizontalFlyingEnemy : EnemyController
+{
+    //[SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
+    private Shader shaderGUItext;
+    private Shader shaderSpritesDefault;
+    private bool followingPlayer;
+    private float distance;
+
+    private void Start()
+    {
+        followingPlayer = false;
+        sprend = gameObject.GetComponent<SpriteRenderer>();
+        shaderGUItext = Shader.Find("GUI/Text Shader");
+        shaderSpritesDefault = Shader.Find("Sprites/Default");
+    }
+
+    public override void Update()
+    {
+        if (canMoveCountdownTimer > 0)
+        {
+            canMoveCountdownTimer -= Time.deltaTime;
+        }
+        else
+        {
+            canMove = true;
+            GetComponent<CapsuleCollider2D>().enabled = true;
+        }
+
+        distance = Vector2.Distance(transform.position, player.transform.position);
+        Vector2 direction = player.transform.position - transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        if (distance < 7)
+        {
+            //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+
+            followingPlayer = true;
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+
+            if (transform.position.x < player.transform.position.x)
+            {
+                sprend.flipX = true;
+            }
+            if (transform.position.x > player.transform.position.x)
+            {
+                sprend.flipX = false;
+            }
+        }
+        else
+        {
+            followingPlayer = false;
+        }
+    }
+
+    public override void FixedUpdate()
+    {
+        if (moveSpeed > 0)
+        {
+            sprend.flipX = true;
+        }
+        if (moveSpeed < 0)
+        {
+            sprend.flipX = false;
+        }
+
+        if (!canMove || followingPlayer)
+            return;
+
+        transform.Translate(new Vector2(moveSpeed, 0) * Time.deltaTime);
+    }
+
+    public override void OnCollisionEnter2D(Collision2D other)
+    {
+        base.OnCollisionEnter2D(other);
+
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            base.OnCollisionEnter2D(other);
+            WhiteSprite();
+            Invoke("NormalSprite", 0.2f);
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (other.transform.position.x > transform.position.x)
+            {
+                other.gameObject.GetComponent<PlayerController>().GetKnockedBack(knockbackForce, knockbackUpwardForce);
+            }
+            else
+            {
+                other.gameObject.GetComponent<PlayerController>().GetKnockedBack(-knockbackForce, knockbackUpwardForce);
+            }
+        }
+    }
+
+    void WhiteSprite()
+    {
+        sprend.material.shader = shaderGUItext;
+        sprend.color = Color.white;
+    }
+
+    void NormalSprite()
+    {
+        sprend.material.shader = shaderSpritesDefault;
+        sprend.color = Color.white;
+    }
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //if (other.CompareTag("Player"))
+    //{
+    //followingPlayer = true;
+    //distance = Vector2.Distance(transform.position, player.transform.position);
+    //Vector2 direction = player.transform.position - transform.position;
+    //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+    //}
+    //}
+
+    //private void FollowPlayer()
+    //{
+    //transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+    //}
+}

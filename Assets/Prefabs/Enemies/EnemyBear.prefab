@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8419560702684995835}
   m_Layer: 0
   m_Name: EnemyBear
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,6 +189,7 @@ MonoBehaviour:
   knockbackUpwardForce: 100
   canMoveTimer: 0.5
   startingHealth: 20
+  canMoveCountdownTimer: 0
   currentHealth: 20
   damageGiven: 1
   canMove: 1

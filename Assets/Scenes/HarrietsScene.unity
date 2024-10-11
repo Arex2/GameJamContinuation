@@ -5933,7 +5933,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.9
+  m_fontSize: 23.7
   m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12331,7 +12331,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.2
+  m_fontSize: 21.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15916,7 +15916,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.25
+  m_fontSize: 28.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -21964,9 +21964,11 @@ MonoBehaviour:
   knockbackUpwardForce: 100
   canMoveTimer: 0.5
   startingHealth: 1
+  canMoveCountdownTimer: 0
   currentHealth: 0
   damageGiven: 1
   canMove: 1
+  sprend: {fileID: 0}
 --- !u!70 &1836780231
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
