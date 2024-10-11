@@ -19,36 +19,4 @@ public class SceneSwitcher1 : MonoBehaviour
             SceneManager.LoadScene(sceneToLoad);
         }
     }
-
-
-    //USE IN PLAYER SCRIPTS
-
-/*    //for saving important player values
-public void SavePlayer()
-{
-    BetweenScenesValueSaver.Instance.playerColor = (Color32)GetComponent<SpriteRenderer>().color;
-    BetweenScenesValueSaver.Instance.abilityDoubleJump = hasAbilityDoubleJump;
-    BetweenScenesValueSaver.Instance.abilityDash = hasAbilityDash;
-    BetweenScenesValueSaver.Instance.coinCount = coinCount;
-    BetweenScenesValueSaver.Instance.deathCount = deathCount;
-    BetweenScenesValueSaver.Instance.keyCount = smallKeyCount;
-}
-
-//for loading player values
-private void LoadPlayer()
-{
-    GetComponent<SpriteRenderer>().color = BetweenScenesValueSaver.Instance.playerColor;
-    hasAbilityDoubleJump = BetweenScenesValueSaver.Instance.abilityDoubleJump;
-    hasAbilityDash = BetweenScenesValueSaver.Instance.abilityDash;
-    coinCount = BetweenScenesValueSaver.Instance.coinCount;
-    deathCount = BetweenScenesValueSaver.Instance.deathCount;
-    smallKeyCount = BetweenScenesValueSaver.Instance.keyCount;
-
-    if (BetweenScenesValueSaver.Instance.switchingBetweenLevelScenes && SceneManager.GetActiveScene().buildIndex == 3)
-    {
-        transform.position = new Vector3(42.5f, 6.5f, 0);
-    }
-
-}
-*/
 }
