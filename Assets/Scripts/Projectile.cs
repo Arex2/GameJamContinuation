@@ -7,12 +7,14 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     ParticleSystem _particleSystem;
     Rigidbody2D rb;
+    AudioSource audioSource;
 
     static public int damage = 1;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -28,6 +30,7 @@ public class Projectile : MonoBehaviour
         {
             //collision.gameObject.GetComponent<EnemyMovement>.TakeDamage(damage);
         }
+        audioSource.Play(0);
         DestroyProjectile();
     }
 
