@@ -201,9 +201,10 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        MinusHealth();
+        UpdateHealthBar();
+        UpdateHealthText();
 
-        if (GetComponent<PlayerHealth>().currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Death();
         }
