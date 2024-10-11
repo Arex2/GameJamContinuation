@@ -78,6 +78,12 @@ public class HorizontalFlyingEnemy : EnemyController
     public override void OnCollisionEnter2D(Collision2D other)
     {
         base.OnCollisionEnter2D(other);
+        {
+            if (other.gameObject.CompareTag("Ground"))
+            {
+                moveSpeed = -moveSpeed;
+            }
+        }
         /*
         if (other.gameObject.CompareTag("Projectile"))
         {
