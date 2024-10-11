@@ -8,12 +8,15 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     private Transform player;
 
-    int dashCost;
-    int doubleJumpCost;
-    int shieldCost; 
-    int damageCost; 
-    int latteCost; //super latte!
-    int bombCost;
+    [SerializeField]
+    private GameObject shield;
+
+    int dashCost = 125;
+    int doubleJumpCost = 125;
+    int shieldCost = 125; 
+    int damageCost = 55; 
+    int latteCost = 400; //super latte!
+    int bombCost = 5;
 
 
     private void DisableButton(Button button)
@@ -42,6 +45,7 @@ public class ShopManager : MonoBehaviour
         player.GetComponent<PlayerHealth>().MaxHealth -= shieldCost;
         UpdatePlayerMaxHealthText();
         //player.GetComponent<PlayerController>().hasAbilityShield = true;
+        shield.SetActive(true);
         DisableButton(button);
     }
 
@@ -49,6 +53,7 @@ public class ShopManager : MonoBehaviour
     {
         player.GetComponent<PlayerHealth>().MaxHealth -= damageCost;
         UpdatePlayerMaxHealthText();
+        Projectile.damage ++;
         //player.GetComponent<PlayerController>().hasAbilityShield = true;
         //DisableButton(button);
     }
