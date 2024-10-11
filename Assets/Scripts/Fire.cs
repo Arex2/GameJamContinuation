@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    public int damageDealt = 50;
+    public int damageDealt = 1;
 }

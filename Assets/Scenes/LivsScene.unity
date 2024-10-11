@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 34469212}
   m_Layer: 0
   m_Name: burning_loop_3_0 (18)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 50992252}
   m_Layer: 0
   m_Name: burning_loop_3_0 (12)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 87029160}
   m_Layer: 0
   m_Name: burning_loop_3_0 (2)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 104081768}
   m_Layer: 0
   m_Name: burning_loop_3_0 (13)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1364,7 +1364,7 @@ GameObject:
   - component: {fileID: 113813220}
   m_Layer: 0
   m_Name: burning_loop_3_0
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6360,7 +6360,7 @@ GameObject:
   - component: {fileID: 185390569}
   m_Layer: 0
   m_Name: burning_loop_3_0 (5)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6925,7 +6925,7 @@ GameObject:
   - component: {fileID: 405248476}
   m_Layer: 0
   m_Name: burning_loop_3_0 (10)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7305,7 +7305,7 @@ GameObject:
   - component: {fileID: 467454726}
   m_Layer: 0
   m_Name: burning_loop_3_0 (14)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12401,7 +12401,7 @@ GameObject:
   - component: {fileID: 617767526}
   m_Layer: 0
   m_Name: burning_loop_3_0 (8)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13601,7 +13601,7 @@ GameObject:
   - component: {fileID: 893134737}
   m_Layer: 0
   m_Name: burning_loop_3_0 (17)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24607,7 +24607,7 @@ GameObject:
   - component: {fileID: 949790713}
   m_Layer: 0
   m_Name: burning_loop_3_0 (21)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24980,7 +24980,7 @@ GameObject:
   - component: {fileID: 1014646690}
   m_Layer: 0
   m_Name: burning_loop_3_0 (4)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25562,7 +25562,7 @@ GameObject:
   - component: {fileID: 1185050426}
   m_Layer: 0
   m_Name: burning_loop_3_0 (20)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26151,7 +26151,7 @@ GameObject:
   - component: {fileID: 1323331249}
   m_Layer: 0
   m_Name: burning_loop_3_0 (22)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26317,7 +26317,7 @@ GameObject:
   - component: {fileID: 1339481579}
   m_Layer: 0
   m_Name: burning_loop_3_0 (9)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26800,7 +26800,7 @@ GameObject:
   - component: {fileID: 1396328344}
   m_Layer: 0
   m_Name: burning_loop_3_0 (19)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27114,7 +27114,7 @@ GameObject:
   - component: {fileID: 1484174169}
   m_Layer: 0
   m_Name: burning_loop_3_0 (11)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27651,6 +27651,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 41448c39ed3937f4d95cbc6bf746b374, type: 3}
   - {fileID: 21300000, guid: 06a2105218ab61148bda4401940b4bf6, type: 3}
   - {fileID: 21300000, guid: d4039b29a40998745977392b30028f4f, type: 3}
+  audioSource: {fileID: 0}
+  jumpSound: {fileID: 0}
+  attackSound1: {fileID: 0}
+  attackSound2: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!114 &1574951895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27738,7 +27743,7 @@ GameObject:
   - component: {fileID: 1643039315}
   m_Layer: 0
   m_Name: burning_loop_3_0 (16)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28058,7 +28063,7 @@ GameObject:
   - component: {fileID: 1659880440}
   m_Layer: 0
   m_Name: burning_loop_3_0 (7)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28408,7 +28413,7 @@ GameObject:
   - component: {fileID: 1747853313}
   m_Layer: 0
   m_Name: burning_loop_3_0 (3)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28574,7 +28579,7 @@ GameObject:
   - component: {fileID: 1751231243}
   m_Layer: 0
   m_Name: burning_loop_3_0 (1)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28824,6 +28829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherDoor: {fileID: 1992748318}
+  audioSource: {fileID: 0}
 --- !u!61 &1928530342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28915,7 +28921,7 @@ GameObject:
   - component: {fileID: 1975788383}
   m_Layer: 0
   m_Name: burning_loop_3_0 (15)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29194,7 +29200,7 @@ GameObject:
   - component: {fileID: 2068661841}
   m_Layer: 0
   m_Name: burning_loop_3_0 (6)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29392,7 +29398,7 @@ GameObject:
   - component: {fileID: 2120994337}
   m_Layer: 0
   m_Name: burning_loop_3_0 (23)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

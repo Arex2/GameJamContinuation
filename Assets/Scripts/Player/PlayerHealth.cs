@@ -27,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void UpdateTrueHealthUI()
     {
-        
         for(int i = 0; i< hearts.Length; i++)
         {
             if(i<trueHealth)
@@ -43,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
         }
         
     }
+
     public int CurrentHealth
     {
         get { return currentHealth; }
@@ -81,8 +81,7 @@ public class PlayerHealth : MonoBehaviour
             Timer();
         }
 
-
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             //player die
             if(hasBeenRaised == false)
@@ -170,13 +169,44 @@ public class PlayerHealth : MonoBehaviour
         //change text
         if (change > 0)
         {
-            tempTextBox.text = "-" + change + "max"; //parameter för int amount changed
+            tempTextBox.text = "-" + change + "max"; //parameter fï¿½r int amount changed
         }
         else
-            tempTextBox.text = "+" + System.Math.Abs(change) + "max"; //parameter för int amount changed
+            tempTextBox.text = "+" + System.Math.Abs(change) + "max"; //parameter fï¿½r int amount changed
 
 
         //tempTextBox.color = Color.red;
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Trap"))
+        {
+            TakeDamage(other.gameObject.GetComponent<Fire>().damageDealt);
+            //Invoke("FireDamage", 0.5f);
+        }
+    }
+
+    private void FireDamage()
+    {
+        currentHealth -= GetComponent<Fire>().damageDealt;
+        MinusHealth();
+
+        if (GetComponent<PlayerHealth>().currentHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+        MinusHealth();
+
+        if (GetComponent<PlayerHealth>().currentHealth <= 0)
+        {
+            Death();
+        }
     }
 
     private void Death()
