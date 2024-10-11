@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static EventController;
 
@@ -18,6 +19,30 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private TMP_Text maxHealthText;
 
+    bool hasBeenRaised;//so Death wont be raised during multiple frames
+
+    //FOR TRUE HEALTH
+    public Image[] hearts;
+    private Sprite heartFill;
+
+    private void UpdateTrueHealthUI()
+    {
+        
+        for(int i = 0; i< hearts.Length; i++)
+        {
+            if(i<trueHealth)
+            {
+                hearts[i].color = new Color32(125, 69, 42, 255);
+                Debug.Log("R truH: " + trueHealth + "  i: " + i);
+            }
+            else
+            {
+                hearts[i].color = new Color32(216, 121, 43, 255);
+                Debug.Log("G truH: " + trueHealth + "  i: " + i);
+            }
+        }
+        
+    }
     public int CurrentHealth
     {
         get { return currentHealth; }
@@ -56,10 +81,15 @@ public class PlayerHealth : MonoBehaviour
             Timer();
         }
 
+
         if(currentHealth <= 0)
         {
             //player die
-            EventController.RaiseOnDeath();
+            if(hasBeenRaised == false)
+            {
+                EventController.RaiseOnDeath(); //SHOULD ONLY HAPPEN ONCE
+                hasBeenRaised = true;
+            }
         }
 
         if (currentHealth > maxHealth) //should not be able to get over max health
@@ -156,7 +186,9 @@ public class PlayerHealth : MonoBehaviour
         {
             //GAMEOVER
             //switch scene to main menu
+            SceneManager.LoadScene(0);
         }
+        UpdateTrueHealthUI();
     }
 
     private void ResetPlayerHealth()
@@ -164,6 +196,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         UpdateHealthBar();
         UpdateHealthText();
+        hasBeenRaised = false;
     }
 
 }

@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private ParticleSystem dashParticles;
     [SerializeField] private TrailRenderer dashTrail;
-    public bool hasAbilityDoubleJump, hasAbilityDash;
+    public bool hasAbilityDoubleJump, hasAbilityDash, hasAbilityShield;
     private bool hasDoubleJumped, hasDashed;
 
     [SerializeField]
@@ -50,8 +50,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //bombCount = 10;
-        hasAbilityDash = true;
-        hasAbilityDoubleJump = true;
+        //hasAbilityDash = true;
+        //hasAbilityDoubleJump = true;
         dashParticles.Stop();
         dashTrail.enabled = false;
 
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalValue = Input.GetAxis("Horizontal");
 
-        //FLIP TO FACE MOVE DIRECTION
+
         if(Input.GetButton("Fire1") || Input.GetButton("Fire2"))
         {
             //FLIP TO FACE MOUSE
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-
+            //FLIP TO FACE MOVE DIRECTION
             if (horizontalValue < 0f)
             {
                 FlipSprite(true);

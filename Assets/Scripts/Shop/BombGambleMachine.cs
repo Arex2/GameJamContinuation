@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using TMPro;
 
 public class BombGambleMachine : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class BombGambleMachine : MonoBehaviour
     private GameObject bomb;
     [SerializeField]
     private GameObject nothingDrop;
+    [SerializeField]
+    private TMP_Text freeDealText;
+
+    private int cost = 1;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -19,6 +26,10 @@ public class BombGambleMachine : MonoBehaviour
             if(CheckFreeStealState())
             {
                 FreeDealMessage();
+            }
+            else
+            {
+                RegularMessage();
             }
         }
     }
@@ -32,7 +43,7 @@ public class BombGambleMachine : MonoBehaviour
         else
         {
             Gamble();
-            player.GetComponent<PlayerHealth>().MaxHealth -= 25;
+            player.GetComponent<PlayerHealth>().MaxHealth -= cost;
         }
     }
 
@@ -88,5 +99,11 @@ public class BombGambleMachine : MonoBehaviour
     private void FreeDealMessage()
     {
         //-0ho for 1 bomb!
+        freeDealText.text = "! Sale ! 0 for 1";
+    }
+
+    private void RegularMessage()
+    {
+        freeDealText.text = "1hp for chance";
     }
 }
