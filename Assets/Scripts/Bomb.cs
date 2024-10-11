@@ -8,6 +8,8 @@ public class Bomb : MonoBehaviour
     ParticleSystem _particleSystem;
     [SerializeField] AudioClip clip;
     Rigidbody2D rb;
+    int directHitDmg = 20;
+    int explosionDmg = 15;
     float explosionRadius = 2f;
 
     private void Start()
@@ -25,7 +27,7 @@ public class Bomb : MonoBehaviour
         //find enemy
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //collision.gameObject.GetComponent<EnemyMovement>.TakeDamage(3);
+            collision.gameObject.GetComponent<EnemyController>().EnemyTakeDamage(directHitDmg);
             //DO even more damage on direct hit
         }
         AudioSource.PlayClipAtPoint(clip, transform.position);
@@ -49,6 +51,7 @@ public class Bomb : MonoBehaviour
             {
                 //Do damage
                 //hitCollider.GetComponent<EnemyController>().doDamage(10);
+                hitCollider.gameObject.GetComponent<EnemyController>().EnemyTakeDamage(explosionDmg);
             }
         }
     }

@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int startingHealth = 10;
     public float canMoveCountdownTimer;
     public int currentHealth = 10;
-    public int damageGiven = 1;
+    public int damageGiven = 117;
     public bool canMove = true;
     public SpriteRenderer sprend;
 
@@ -71,7 +71,8 @@ public class EnemyController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Projectile"))
         {
-            EnemyHurt();
+            //EnemyHurt();
+            /*
             currentHealth -= 1;
             other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(other.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounce));
@@ -80,6 +81,7 @@ public class EnemyController : MonoBehaviour
             {
                 Invoke("EnemyDeactivate", 0.2f);
             }
+            */
         }
 
         if (other.gameObject.CompareTag("Shield"))
@@ -98,7 +100,7 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             moveSpeed = -moveSpeed;
-
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageGiven);
             if (other.transform.position.x > transform.position.x)
             {
                 other.gameObject.GetComponent<PlayerController>().GetKnockedBack(knockbackForce, knockbackUpwardForce);
@@ -107,6 +109,7 @@ public class EnemyController : MonoBehaviour
             {
                 other.gameObject.GetComponent<PlayerController>().GetKnockedBack(-knockbackForce, knockbackUpwardForce);
             }
+
         }
     }
 
@@ -123,5 +126,18 @@ public class EnemyController : MonoBehaviour
     private void EnemyDeactivate()
     {
         gameObject.SetActive(false);
+    }
+
+    public virtual void EnemyTakeDamage(int damage)
+    {
+        EnemyHurt();
+        currentHealth -= damage;
+        //other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(other.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
+        //other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounce));
+
+        if (currentHealth <= 0)
+        {
+            Invoke("EnemyDeactivate", 0.2f);
+        }
     }
 }

@@ -78,13 +78,14 @@ public class WaterEnemyTargetSeeking : EnemyController
     public override void OnCollisionEnter2D(Collision2D other)
     {
         base.OnCollisionEnter2D(other);
-
+        /*
         if (other.gameObject.CompareTag("Projectile"))
         {
             base.OnCollisionEnter2D(other);
             WhiteSprite();
             Invoke("NormalSprite", 0.2f);
         }
+        */
         if (other.gameObject.CompareTag("Player"))
         {
             if (other.transform.position.x > transform.position.x)
@@ -96,6 +97,14 @@ public class WaterEnemyTargetSeeking : EnemyController
                 other.gameObject.GetComponent<PlayerController>().GetKnockedBack(-knockbackForce, knockbackUpwardForce);
             }
         }
+    }
+
+    public override void EnemyTakeDamage(int damage)
+    {
+        base.EnemyTakeDamage(damage);
+        WhiteSprite();
+        Invoke("NormalSprite", 0.2f);
+
     }
 
     void WhiteSprite()

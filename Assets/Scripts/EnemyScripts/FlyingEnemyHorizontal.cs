@@ -27,6 +27,7 @@ public class FlyingEnemyHorizontal : EnemyController
         }
     }
 
+    /*
     public override void OnCollisionEnter2D(Collision2D other)
     {
         base.OnCollisionEnter2D(other);
@@ -37,6 +38,14 @@ public class FlyingEnemyHorizontal : EnemyController
             WhiteSprite();
             Invoke("NormalSprite", 0.2f);
         }
+    }
+    */
+    public override void EnemyTakeDamage(int damage)
+    {
+        base.EnemyTakeDamage(damage);
+        WhiteSprite();
+        Invoke("NormalSprite", 0.2f);
+
     }
 
     void WhiteSprite()
