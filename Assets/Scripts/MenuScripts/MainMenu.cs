@@ -33,7 +33,7 @@ public class MainMenu : MonoBehaviour
             else
             {
                 //play
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(3);
             }
         }
     }
