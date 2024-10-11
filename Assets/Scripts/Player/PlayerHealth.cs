@@ -25,6 +25,10 @@ public class PlayerHealth : MonoBehaviour
     public Image[] hearts;
     private Sprite heartFill;
 
+    private SpriteRenderer sprend;
+    private Shader shaderGUItext;
+    private Shader shaderSpritesDefault;
+
     private void UpdateTrueHealthUI()
     {
         for(int i = 0; i< hearts.Length; i++)
@@ -70,6 +74,10 @@ public class PlayerHealth : MonoBehaviour
         EventController.onDeath += Death;
         EventController.onHPClick += AddHealth;
         EventController.onRespawn += ResetPlayerHealth;
+
+        sprend = gameObject.GetComponent<SpriteRenderer>();
+        shaderGUItext = Shader.Find("GUI/Text Shader");
+        shaderSpritesDefault = Shader.Find("Sprites/Default");
     }
 
     // Update is called once per frame
@@ -204,6 +212,9 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthBar();
         UpdateHealthText();
 
+        WhiteSprite();
+        Invoke("NormalSprite", 0.2f);
+
         if (currentHealth <= 0)
         {
             Death();
@@ -228,6 +239,18 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthBar();
         UpdateHealthText();
         hasBeenRaised = false;
+    }
+
+    void WhiteSprite()
+    {
+        sprend.material.shader = shaderGUItext;
+        sprend.color = Color.white;
+    }
+
+    void NormalSprite()
+    {
+        sprend.material.shader = shaderSpritesDefault;
+        sprend.color = Color.white;
     }
 
 }
