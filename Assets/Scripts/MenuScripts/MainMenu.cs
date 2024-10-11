@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public bool quit;
+    public bool toMainMenu;
+    public bool toSandbox;
 
     private Collider2D col;
     private bool inRange = false;
@@ -15,7 +17,15 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && inRange)
         {
-            if(quit == true)
+            if(toMainMenu == true)
+            {
+                SceneManager.LoadScene(0);
+            }
+            else if (toSandbox == true)
+            {
+                SceneManager.LoadScene(2);
+            }
+            else if(quit == true)
             {
                 //quit
                 Application.Quit();
