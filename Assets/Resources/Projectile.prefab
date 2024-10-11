@@ -162,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particleSystem: {fileID: 947354051857645376, guid: bb06346338ac3447ca4eccf3fbbe92e9, type: 3}
+  clip: {fileID: 8300000, guid: 6093edb64b03ec74f8f553ae0672cbea, type: 3}

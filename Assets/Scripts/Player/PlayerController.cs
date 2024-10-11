@@ -44,6 +44,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public Sprite[] projectileSprites;
 
+    //AUDIO STUFF
+    public AudioSource audioSource;
+    [SerializeField] private AudioClip jumpSound, attackSound1, attackSound2, deathSound;
+
+    //PROPERTIES
     public int BombCount => bombCount;
 
     // Start is called before the first frame update
@@ -245,6 +250,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        audioSource.PlayOneShot(jumpSound);
         rb.velocity = Vector2.zero;
         rb.AddForce(new Vector2(0, jumpForce));
     }
@@ -282,6 +288,7 @@ public class PlayerController : MonoBehaviour
 
     private void Death()
     {
+        audioSource.PlayOneShot(deathSound);
         anim.SetBool("respawn", false);
         anim.SetTrigger("death");
         Invoke("Respawn", 1f);
@@ -298,6 +305,7 @@ public class PlayerController : MonoBehaviour
 
     private void ShootProjectile()
     {
+        audioSource.PlayOneShot(attackSound1);
         //Instantiate(Resources.Load<TMP_Text>("PopupText"), Input.mousePosition - (offset/2), transform.rotation) as TMP_Text; //Camera.main.ScreenToWorldPoint(Input.mousePosition)
         var mousepos = GetMousePosition();
         var lookAngle = Mathf.Atan2(mousepos.y, mousepos.x) * Mathf.Rad2Deg;
@@ -308,6 +316,7 @@ public class PlayerController : MonoBehaviour
 
     private void ShootBomb()
     {
+        audioSource.PlayOneShot(attackSound2);
         var mousepos = GetMousePosition();
         var lookAngle = Mathf.Atan2(mousepos.y, mousepos.x) * Mathf.Rad2Deg;
         GameObject projectile = Instantiate(Resources.Load<GameObject>("Bomb"), transform.position, Quaternion.Euler(0, 0, lookAngle));

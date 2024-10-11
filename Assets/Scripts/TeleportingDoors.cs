@@ -8,6 +8,7 @@ public class TeleportingDoors : MonoBehaviour
     private GameObject otherDoor;
     private Collider2D col;
     private bool inRange = false;
+    [SerializeField] AudioSource audioSource;
 
     private void Update()
     {
@@ -31,6 +32,7 @@ public class TeleportingDoors : MonoBehaviour
 
     private void Teleport(Collider2D collision)
     {
+        audioSource.Play();
         collision.transform.position = otherDoor.transform.position;
         collision.GetComponent<Rigidbody2D>().velocity = Vector3.zero; //motverkar jump addforce grejen
     }
