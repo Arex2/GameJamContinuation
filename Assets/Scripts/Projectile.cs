@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour
         //find enemy
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            //collision.gameObject.GetComponent<EnemyMovement>.TakeDamage(damage);
+            collision.gameObject.GetComponent<EnemyController>().EnemyTakeDamage(damage);
         }
         AudioSource.PlayClipAtPoint(clip, transform.position);
         DestroyProjectile();

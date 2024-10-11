@@ -49,7 +49,7 @@ public class ShopManager : MonoBehaviour
         DisableButton(button);
     }
 
-    public void BuyDamage(Button button)
+    public void BuyDamage()
     {
         player.GetComponent<PlayerHealth>().MaxHealth -= damageCost;
         UpdatePlayerMaxHealthText();
