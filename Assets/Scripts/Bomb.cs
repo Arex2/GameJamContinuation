@@ -6,7 +6,7 @@ public class Bomb : MonoBehaviour
 {
     [SerializeField]
     ParticleSystem _particleSystem;
-
+    [SerializeField] AudioClip clip;
     Rigidbody2D rb;
 
     private void Start()
@@ -27,7 +27,7 @@ public class Bomb : MonoBehaviour
         {
             //collision.gameObject.GetComponent<EnemyMovement>.TakeDamage(3);
         }
-        Debug.Log("Collision objekt: " + collision.gameObject.name);
+        AudioSource.PlayClipAtPoint(clip, transform.position);
         DestroyProjectile();
     }
 
